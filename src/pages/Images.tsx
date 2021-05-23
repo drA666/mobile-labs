@@ -22,7 +22,7 @@ export const Images = () => {
     (async () => {
       try {
         const img = await getImagesByReq();
-        const chunk_size = 7;
+        const chunk_size = 6;
         const chunks = img
           .map((_: any, i: number) =>
             i % chunk_size === 0 ? img.slice(i, i + chunk_size) : null,
@@ -36,7 +36,7 @@ export const Images = () => {
   }, []);
   const addImage = (image: string) => {
     const lastImageSet = images.pop() ?? [];
-    if (lastImageSet.length < 7) {
+    if (lastImageSet.length < 6) {
       const data = [...lastImageSet, image];
       setImages([...images, data]);
       return;
